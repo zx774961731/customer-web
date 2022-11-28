@@ -89,6 +89,7 @@ async function handleLogin() {
   if (res !== -1) {
     setToken(res.token)
     $message.success('登录成功')
+    lStorage.set('userName', res.userName)
     if (isRemember.value) {
       lStorage.set('loginInfo', { userId, password, userName: res.userName })
     } else {

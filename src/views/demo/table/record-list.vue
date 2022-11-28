@@ -61,6 +61,7 @@
 
 <script setup>
 import { getRecordList, deleteTicket } from '@/api/zx'
+import { NPopconfirm } from 'naive-ui'
 import dayjs from 'dayjs'
 import { h, onMounted, reactive, ref } from 'vue'
 import { useRouter } from 'vue-router'
@@ -228,18 +229,42 @@ const columns = [
           },
           { default: () => '详情' }
         ),
+
         h(
-          'a',
+          NPopconfirm,
           {
-            onClick: async () => {
+            onPositiveClick: async () => {
               const res = await deleteTicket(row.ticketId)
               $message.success(res)
               getList()
             },
-            style: { display: row.status == 1 ? 'contents' : 'none' },
           },
-          { default: () => '撤销工单' }
+          {
+            trigger: () => {
+              return h(
+                'a',
+                { style: { display: row.status == 1 ? 'inline-block' : 'none' } },
+                { default: () => '删除' }
+              )
+            },
+            default: () => {
+              return '工单撤销后将终止后续工作，请确认是否撤销？'
+            },
+          }
         ),
+        // h(
+
+        //   'a',
+        //   {
+        //     onClick: async () => {
+        // const res = await deleteTicket(row.ticketId)
+        // $message.success(res)
+        // getList()
+        //     },
+        //     style: { display: row.status == 1 ? 'contents' : 'none' },
+        //   },
+        //   { default: () => '撤销工单' }
+        // ),
       ]
     },
   },

@@ -1,5 +1,8 @@
 <template>
-  <n-layout has-sider wh-full>
+  <div class="header">
+    <Avatar />
+  </div>
+  <n-layout has-sider class="app-layout">
     <n-layout-sider
       bordered
       collapse-mode="width"
@@ -14,10 +17,10 @@
       <!-- <header bg-white px-15 border-b bc-eee flex items-center :style="`height: ${header.height}px`">
         <AppHeader />
       </header> -->
-      <section v-if="tags.visible" border-b bc-eee>
+      <!-- <section v-if="tags.visible" border-b bc-eee>
         <AppTags :style="{ height: `${tags.height}px` }" />
-      </section>
-      <section flex-1>
+      </section> -->
+      <section class="p20" flex-1>
         <AppMain />
       </section>
     </article>
@@ -27,9 +30,27 @@
 <script setup>
 import SideBar from './components/sidebar/index.vue'
 import AppMain from './components/AppMain.vue'
-import AppTags from './components/tags/index.vue'
+// import AppTags from './components/tags/index.vue'
+import Avatar from './UserAvatar.vue'
 import { useAppStore } from '@/store'
 import { header, tags } from '~/settings'
 
 const appStore = useAppStore()
 </script>
+
+<style lang="less" scoped>
+.header {
+  padding: 0 40px;
+  height: 60px;
+  line-height: 60px;
+  background-color: #f2f3f5;
+  display: flex;
+  flex-direction: row-reverse;
+  & > div {
+    margin-right: 40px;
+  }
+}
+.app-layout {
+  height: calc(100% - 60px);
+}
+</style>

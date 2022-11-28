@@ -1,5 +1,5 @@
 <template>
-  <n-config-provider wh-full :theme-overrides="naiveThemeOverrides">
+  <n-config-provider :locale="zhCN" :date-locale="dateZhCN" wh-full :theme-overrides="naiveThemeOverrides">
     <n-loading-bar-provider>
       <n-dialog-provider>
         <n-notification-provider>
@@ -20,6 +20,7 @@ import { useCssVar } from '@vueuse/core'
 import { kebabCase } from 'lodash-es'
 import { setupMessage, setupDialog } from '@/utils'
 import { naiveThemeOverrides } from '~/settings'
+import { zhCN, dateZhCN } from 'naive-ui'
 
 function setupCssVar() {
   const common = naiveThemeOverrides.common

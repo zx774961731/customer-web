@@ -13,7 +13,7 @@ import { useUserStore } from '@/store'
 import { renderIcon } from '@/utils'
 import { lStorage } from '@/utils'
 
-const name = lStorage.getItem('LoginInfo').value.userName
+const name = lStorage.getItem('userName').value
 const userStore = useUserStore()
 
 const options = [
