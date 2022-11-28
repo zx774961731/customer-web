@@ -37,25 +37,31 @@ body {
 /* 自定义滚动条样式 */
 .cus-scroll {
   overflow: auto;
+
   &::-webkit-scrollbar {
     width: 8px;
     height: 8px;
   }
 }
+
 .cus-scroll-x {
   overflow-x: auto;
+
   &::-webkit-scrollbar {
     width: 0;
     height: 8px;
   }
 }
+
 .cus-scroll-y {
   overflow-y: auto;
+
   &::-webkit-scrollbar {
     width: 8px;
     height: 0;
   }
 }
+
 .cus-scroll,
 .cus-scroll-x,
 .cus-scroll-y {
@@ -63,10 +69,12 @@ body {
     background-color: transparent;
     border-radius: 4px;
   }
+
   &:hover {
     &::-webkit-scrollbar-thumb {
       background: #bfbfbf;
     }
+
     &::-webkit-scrollbar-thumb:hover {
       background: var(--primary-color);
     }
@@ -81,27 +89,35 @@ body {
   height: 0;
   display: block;
 }
+
 .f_l {
   float: left;
 }
+
 .f_r {
   float: right;
 }
+
 .m_l_20 {
   margin-left: 20px;
 }
+
 .m_l_70 {
   margin-left: 70px;
 }
+
 .m_l_50 {
   margin-left: 50px;
 }
+
 .m_b_20 {
   margin-bottom: 20px;
 }
+
 .t_c {
   text-align: center;
 }
+
 .w_30_p {
   width: 30%;
   text-align: right;
@@ -109,10 +125,55 @@ body {
   margin-bottom: 20px;
   word-break: keep-all;
 }
+
 .w_60_p {
   width: 60%;
   margin-bottom: 20px;
 }
+
 .w_30_p {
   width: 30%;
+}
+
+body {
+  .search {
+
+    .oneLine,
+    .towLine {
+      height: 60px;
+    }
+
+    .n-collapse {
+      width: 100px;
+      line-height: 60px;
+      flex: none !important;
+    }
+
+    .click-button {
+      width: 140px;
+      line-height: 60px;
+
+      .search-button {
+        margin-right: 8px;
+      }
+    }
+
+    .n-form-item {
+      display: flex;
+
+      .n-form-item-label {
+        width: 80px;
+        line-height: 60px;
+      }
+
+      .n-form-item-blank {
+        min-width: 70%;
+      }
+    }
+  }
+
+  .n-pagination {
+    float: right;
+    margin-right: 20px;
+  }
 }
