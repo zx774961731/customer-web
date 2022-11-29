@@ -2,7 +2,7 @@
   <n-form ref="formRef" class="search" :label-width="80" :model="formValue">
     <div class="oneLine">
       <n-form-item label="工单编号" path="ticketId">
-        <n-input v-model:value="formValue.ticketId" placeholder="输入工单编号" />
+        <n-input v-model:value="formValue.ticketId" placeholder="请输入工单编号" />
       </n-form-item>
       <n-form-item label="问题分类" path="questionType">
         <n-select v-model:value="formValue.questionType" :options="questionType" placeholder="请选择" />
@@ -18,8 +18,8 @@
         <n-collapse-item title="更多" name="1"> </n-collapse-item>
       </n-collapse>
       <div>
-        <n-button @click="getList()">搜索</n-button>
-        <n-button @click="restForm">取消</n-button>
+        <n-button @click="getList()">查询</n-button>
+        <n-button @click="restForm">重置</n-button>
       </div>
     </div>
     <div v-if="isShow" class="towLine">

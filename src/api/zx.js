@@ -76,11 +76,11 @@ export function deleteTicket(ticketId) {
     },
   })
 }
-/**====================运营人员项目接口===================== */
+/**====================用户项目接口===================== */
 // 创建提交工单
 export function submitOrder(data) {
   return service({
-    url: `/staff/ticket/submit`,
+    url: `/customer/ticket/submit`,
     method: 'post',
     data,
   })
@@ -88,34 +88,9 @@ export function submitOrder(data) {
 // 查询工单详情
 export function queryOrderDetail(data) {
   return service({
-    url: `/staff/ticket/queryDetails`,
+    url: `/customer/ticket/queryDetails`,
     method: 'post',
     data,
   })
 }
-// 结单
-export function finishOrder(data) {
-  return service({
-    url: `/staff/ticket/finish`,
-    method: 'post',
-    data,
-  })
-}
-// 转派
-export function deliverOrder(data) {
-  return service({
-    url: `/staff/ticket/deliver`,
-    method: 'post',
-    data,
-  })
-}
-// 评论
-export function commentOrder(data) {
-  return service({
-    url: `/staff/ticket/comment`,
-    method: 'post',
-    data,
-  })
-}
-
-/**====================运营人员项目接口===================== */
+/**====================用户项目接口===================== */

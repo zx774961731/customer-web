@@ -1,33 +1,76 @@
-export const generalOptions = [
+export const productList = [
   {
-    label: '客服1',
-    value: 'staff1',
+    id: 1001,
+    url: 'https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel1.jpeg',
+    name: '产品A',
   },
   {
-    label: '客服2',
-    value: 'staff2',
+    id: 1002,
+    url: 'https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel3.jpeg',
+    name: '产品B',
   },
   {
-    label: '客服3',
-    value: 'staff3',
+    id: 1003,
+    url: 'https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel1.jpeg',
+    name: '产品C',
   },
   {
-    label: '客服4',
-    value: 'staff4',
+    id: 1004,
+    url: 'https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel3.jpeg',
+    name: '产品D',
   },
 ]
 
-export const userOptions = [
+export const allProductList = [
   {
-    label: '用户1',
-    value: 'customer1',
+    id: 2001,
+    url: 'https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel1.jpeg',
+    name: '产品1',
   },
   {
-    label: '用户2',
-    value: 'customer2',
+    id: 2002,
+    url: 'https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel3.jpeg',
+    name: '产品2',
   },
   {
-    label: '用户3',
-    value: 'customer3',
+    id: 2003,
+    url: 'https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel1.jpeg',
+    name: '产品3',
+  },
+  {
+    id: 2004,
+    url: 'https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel3.jpeg',
+    name: '产品4',
+  },
+  {
+    id: 2005,
+    url: 'https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel1.jpeg',
+    name: '产品5',
+  },
+  {
+    id: 2006,
+    url: 'https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel3.jpeg',
+    name: '产品6',
+  },
+  {
+    id: 2007,
+    url: 'https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel1.jpeg',
+    name: '产品7',
+  },
+  {
+    id: 2008,
+    url: 'https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel3.jpeg',
+    name: '产品8',
   },
 ]
+
+// 邮箱正则校验
+export const regexpEmail = (rule, email) => {
+  const regexp = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/
+  return regexp.test(email)
+}
+// 电话号码正则校验
+export const regexpPhone = (rule, phone) => {
+  const regexp = /^(0|86|17951)?(13[0-9]|15[0123456789]|17[678]|18[0-9]|14[57])[0-9]{8}$/
+  return regexp.test(phone)
+}
