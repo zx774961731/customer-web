@@ -69,16 +69,10 @@
             </section>
           </section>
         </section>
-        <section
-          v-if="state.orderDetail.status === 2"
-          class="watermark-container"
-        >
+        <section v-if="state.orderDetail.status === 2" class="watermark-container">
           <section class="text">已完结</section>
         </section>
-        <section
-          v-if="state.orderDetail.status === 3"
-          class="watermark-container"
-        >
+        <section v-if="state.orderDetail.status === 3" class="watermark-container">
           <section class="text">已撤销</section>
         </section>
       </section>
@@ -108,14 +102,14 @@
 import { reactive, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import {} from 'naive-ui'
-import { queryOrderDetail } from '@/api/zx'
+import { queryOrderDetail } from '@/api'
 import dayjs from 'dayjs'
 import { ArrowBackOutline } from '@vicons/ionicons5'
 
 const route = useRoute()
 const router = useRouter()
 const state = reactive({
-  orderDetail: {}
+  orderDetail: {},
 })
 const { query } = route
 console.log('query value: ' + JSON.stringify(query))

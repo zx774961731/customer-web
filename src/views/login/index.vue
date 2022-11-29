@@ -52,7 +52,7 @@ import bgImg from '@/assets/images/login_bg.webp'
 import { useUserStore } from '@/store'
 import { setToken } from '@/utils'
 
-import { login } from '@/api/zx'
+import { login } from '@/api'
 const userStore = useUserStore()
 const title = import.meta.env.VITE_TITLE
 

@@ -31,10 +31,10 @@ export default defineConfig(({ command, mode }) => {
       // open: false,
       // proxy: createViteProxy(VITE_USE_PROXY, VITE_PROXY_TYPE),
       proxy: {
-        '/zx': {
+        '/order': {
           target: 'http://47.94.87.185:7001/',
           changeOrigin: true,
-          rewrite: (path) => path.replace(/^\/zx/, ''),
+          rewrite: (path) => path.replace(/^\/order/, ''),
         },
       },
     },

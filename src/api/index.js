@@ -1,6 +1,6 @@
 import axios from 'axios'
 const service = axios.create({
-  baseURL: '/zx', // 配置开发环境的baseApi
+  baseURL: '/order', // 配置开发环境的baseApi
   timeout: 5000, // 超时时间
 })
 import { getToken } from '@/utils'
@@ -34,7 +34,7 @@ service.interceptors.response.use(
     return Promise.reject(error) // 返回执行错误的错误的promise对象 进入catch
   }
 )
-
+// 登录
 export function login(data) {
   return service({
     url: `/sys/login`,
@@ -42,7 +42,8 @@ export function login(data) {
     data,
   })
 }
-
+/**====================用户项目接口===================== */
+// 服务记录
 export function getRecordList(data) {
   return service({
     url: `/customer/ticket/query`,
@@ -50,23 +51,7 @@ export function getRecordList(data) {
     data,
   })
 }
-
-export function getToDoList(data) {
-  return service({
-    url: `/staff/ticket/undo`,
-    method: 'post',
-    data,
-  })
-}
-
-export function getDoneList(data) {
-  return service({
-    url: `/staff/ticket/done`,
-    method: 'post',
-    data,
-  })
-}
-
+// 撤销工单
 export function deleteTicket(ticketId) {
   return service({
     url: `/customer/ticket/deleteTicket`,
@@ -76,7 +61,7 @@ export function deleteTicket(ticketId) {
     },
   })
 }
-/**====================用户项目接口===================== */
+
 // 创建提交工单
 export function submitOrder(data) {
   return service({
