@@ -13,14 +13,14 @@
     >
       <SideBar />
     </n-layout-sider>
-    <article flex-1 flex-col overflow-y-scroll>
+    <article flex-1 flex-col overflow-y-scroll class="app-article">
       <!-- <header bg-white px-15 border-b bc-eee flex items-center :style="`height: ${header.height}px`">
         <AppHeader />
       </header> -->
       <!-- <section v-if="tags.visible" border-b bc-eee>
         <AppTags :style="{ height: `${tags.height}px` }" />
       </section> -->
-      <section class="p20" flex-1>
+      <section class="p20 article-section" flex-1>
         <AppMain />
       </section>
     </article>
@@ -43,14 +43,23 @@ const appStore = useAppStore()
   padding: 0 40px;
   height: 60px;
   line-height: 60px;
-  background-color: #f2f3f5;
+  background-color: #fff;
   display: flex;
   flex-direction: row-reverse;
-  & > div {
-    margin-right: 40px;
-  }
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.06);
+  // & > div {
+  //   margin-right: 40px;
+  // }
 }
 .app-layout {
-  height: calc(100% - 60px);
+  margin-top: 2px;
+  height: calc(100% - 62px);
+}
+.app-article {
+  background-color: #f2f3f5;
+  padding: 20px;
+  .article-section {
+    background-color: #fff;
+  }
 }
 </style>

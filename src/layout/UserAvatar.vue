@@ -3,7 +3,7 @@
     <div flex items-center cursor-pointer>
       <!-- <img :src="userStore.avatar" mr10 w-35 h-35 rounded-full /> -->
       <!-- <span>{{ userStore.name }}</span> -->
-      <span>{{ name }}</span>
+      <span class="name">{{ name || '未知用户' }}</span>
     </div>
   </n-dropdown>
 </template>
@@ -38,3 +38,16 @@ function handleSelect(key) {
   }
 }
 </script>
+
+<style lang="less" scoped>
+.name {
+  width: 42px;
+  font-size: 12px;
+  height: 42px;
+  background-color: #4080ff;
+  line-height: 42px;
+  border-radius: 42px;
+  text-align: center;
+  color: #fff;
+}
+</style>
