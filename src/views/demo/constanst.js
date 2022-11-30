@@ -66,11 +66,11 @@ export const allProductList = [
 
 // 邮箱正则校验
 export const regexpEmail = (rule, email) => {
-  const regexp = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/
+  const regexp = /^([a-zA-Z0-9_]-*\.*)+@([a-zA-Z0-9_]-?)+(\.[a-zA-Z]{2,3}){1,2}$/
   return regexp.test(email)
 }
 // 电话号码正则校验
 export const regexpPhone = (rule, phone) => {
-  const regexp = /^(0|86|17951)?(13[0-9]|15[0123456789]|17[678]|18[0-9]|14[57])[0-9]{8}$/
+  const regexp = /^1[3456789]\d{9}$/
   return regexp.test(phone)
 }

@@ -116,6 +116,7 @@ const data = ref({
   records: [],
 })
 const pageSizeChange = (pageSize) => {
+  page.pageNo = 1
   page.pageSize = pageSize
   getList()
 }
@@ -227,6 +228,7 @@ const columns = [
         h(
           'a',
           {
+            class: 'detail',
             onClick: () => {
               router.push({
                 name: 'orderDetail',
@@ -251,7 +253,8 @@ const columns = [
             trigger: () => {
               return h(
                 'a',
-                { style: { display: row.status == 1 ? 'inline-block' : 'none' } },
+
+                { class: 'delete', style: { display: row.status == 1 ? 'inline-block' : 'none' } },
                 { default: () => '撤销工单' }
               )
             },

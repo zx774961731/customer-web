@@ -25,6 +25,10 @@
               <section class="w_60_p f_l">{{ onHandleTime(state.orderDetail.gmtCreate) }}</section>
             </section>
             <section class="clearfix">
+              <section class="w_30_p f_l">通知方式：</section>
+              <section class="w_60_p f_l">{{ onHandleContactType(state.orderDetail.contactType) }}</section>
+            </section>
+            <section class="clearfix">
               <template v-if="state.orderDetail.contactType == '1'">
                 <section class="w_30_p f_l">邮箱地址：</section>
               </template>
@@ -32,22 +36,6 @@
                 <section class="w_30_p f_l">联系电话：</section>
               </template>
               <section class="w_60_p f_l">{{ state.orderDetail.contactInfo }}</section>
-            </section>
-            <section class="clearfix">
-              <section class="w_30_p f_l">问题描述：</section>
-              <section class="w_60_p f_l">
-                <n-ellipsis :line-clamp="2">
-                  {{ state.orderDetail.description }}
-                </n-ellipsis>
-              </section>
-            </section>
-            <section class="clearfix">
-              <section class="w_30_p f_l" style="margin-bottom: 0">附件：</section>
-              <section class="w_60_p f_l" style="margin-bottom: 0">
-                <section v-for="(item, index) in state.orderDetail.fileAddressArray" :key="index" class="file">
-                  {{ item }}
-                </section>
-              </section>
             </section>
           </section>
           <section class="right-detail-container f_l">
@@ -57,15 +45,29 @@
             </section>
             <section class="clearfix">
               <section class="w_30_p f_l">工单提交人：</section>
-              <section class="w_60_p f_l">{{ state.orderDetail.staffUserName }}</section>
+              <section class="w_60_p f_l">{{ state.orderDetail.customerUserName }}</section>
             </section>
-            <section class="clearfix">
-              <section class="w_30_p f_l">通知方式：</section>
-              <section class="w_60_p f_l">{{ onHandleContactType(state.orderDetail.contactType) }}</section>
+            <section v-if="state.orderDetail.status === 2 || state.orderDetail.status === 3" class="clearfix">
+              <section class="w_30_p f_l">处理完成时间：</section>
+              <section class="w_60_p f_l">{{ onHandleTime(state.orderDetail.gmtModified) }}</section>
             </section>
             <section class="clearfix">
               <section class="w_30_p f_l">工单状态：</section>
               <section class="w_60_p f_l">{{ onHandleStatus(state.orderDetail.status) }}</section>
+            </section>
+          </section>
+          <section class="f_l w_100_p clearfix">
+            <section class="w_15_p f_l">问题描述：</section>
+            <section class="w_80_p f_l" style="max-height:113px;overflow:auto;">
+              {{ state.orderDetail.description }}
+            </section>
+          </section>
+          <section class="f_l w_100_p clearfix">
+            <section class="w_15_p f_l" style="margin-bottom: 0">附件：</section>
+            <section class="w_80_p f_l" style="margin-bottom: 0">
+              <span v-for="(item, index) in state.orderDetail.fileAddressArray" :key="index" class="file">
+                {{ item }}
+              </span>
             </section>
           </section>
         </section>
@@ -196,16 +198,18 @@ function onHandleTime(time) {
       }
       .left-detail-container {
         width: 50%;
-        .file {
-          color: blue;
-          cursor: pointer;
-          &:hover {
-            opacity: 0.8;
-          }
-        }
       }
       .right-detail-container {
         width: 50%;
+      }
+      .file {
+        color: blue;
+        cursor: pointer;
+        margin-right: 20px;
+        display: inline-block;
+        &:hover {
+          opacity: 0.8;
+        }
       }
     }
     .order-handle-container {
