@@ -83,14 +83,10 @@
         <section class="order-handle-container clearfix">
           <h3>处理结果</h3>
           <section class="m_l_50 clearfix">
-            <section class="left-detail-container f_l">
-              <section class="clearfix">
-                <section class="w_30_p f_l">处理结果：</section>
-                <section class="w_60_p f_l">
-                  <n-ellipsis :line-clamp="1">
-                    {{ state.orderDetail.result }}
-                  </n-ellipsis>
-                </section>
+            <section class="f_l w_100_p clearfix">
+              <section class="w_15_p f_l" style="margin-bottom: 0">处理结果：</section>
+              <section class="w_80_p f_l" style="max-height:113px;overflow:auto;">
+                {{ state.orderDetail.result }}
               </section>
             </section>
           </section>
