@@ -1,10 +1,10 @@
 const Layout = () => import('@/layout/index.vue')
 
 export default {
-  name: 'Demo',
-  path: '/demo',
+  name: 'Customer',
+  path: '/customer',
   component: Layout,
-  redirect: '/demo/createOrder',
+  redirect: '/customer/createOrder',
   isHidden: true,
   meta: {
     title: '用户',
